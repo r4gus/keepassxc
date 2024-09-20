@@ -43,6 +43,8 @@
 #include "Search.h"
 #include "Show.h"
 #include "Utils.h"
+#include "ExportPasskey.h"
+#include "ImportPasskey.h"
 
 #include <QCommandLineParser>
 #include <QFileInfo>
@@ -185,6 +187,8 @@ namespace Commands
         s_commands.insert(QStringLiteral("rmdir"), QSharedPointer<Command>(new RemoveGroup()));
         s_commands.insert(QStringLiteral("search"), QSharedPointer<Command>(new Search()));
         s_commands.insert(QStringLiteral("show"), QSharedPointer<Command>(new Show()));
+        s_commands.insert(QStringLiteral("export-passkey"), QSharedPointer<Command>(new ExportPasskey()));
+        s_commands.insert(QStringLiteral("import-passkey"), QSharedPointer<Command>(new ImportPasskey()));
 
         if (interactive) {
             s_commands.insert(QStringLiteral("exit"), QSharedPointer<Command>(new Exit("exit")));
